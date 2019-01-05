@@ -19,6 +19,7 @@
 	</parent-->
 
 	<modules>
+		<module>ZaCommon</module>
 		<module>ZaEurekaServer</module>
 		<module>ZaEurekaClient</module>
 		<module>ZaFeignConsumer</module>
