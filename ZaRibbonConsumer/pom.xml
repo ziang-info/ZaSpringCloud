@@ -63,6 +63,12 @@
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>info.ziang.scs</groupId>
+            <artifactId>za-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

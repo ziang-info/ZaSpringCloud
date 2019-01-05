@@ -1,12 +1,14 @@
 package info.ziang.scs.eureka.client;
 
 
+import info.ziang.scs.entity.Book;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -57,6 +59,11 @@ public class ServiceHiApplication {
 	@RequestMapping("/info")
 	public String info() {
 		return "I am from port:" + port;
+	}
+
+	@RequestMapping(value = "/getbook1", method = RequestMethod.GET)
+	public Book book1() {
+		return new Book("三国演义", 90, "罗贯中", "花城出版社");
 	}
 
 }

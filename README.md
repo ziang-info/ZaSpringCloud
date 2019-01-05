@@ -1,7 +1,8 @@
 # za-spring-cloud
 Example of using spring cloud: eureka feign
 
-Assumes Project (from [ZaSpringCloud](https://github.com/ziang-info/ZaSpringCloud)) is running on http://localhost:8761
+Assumes Project (from [ZaSpringCloud](https://github.com/ziang-info/ZaSpringCloud)) is 
+running on [http://localhost:8761](http://localhost:8761)
 
 ## building
 
@@ -57,8 +58,14 @@ You should see like:
     or
     `hi ribbon,i am from port:8763 and 35`
 
+[http://localhost:8771/sayHi](http://localhost:8771/sayHi)
+[http://localhost:8771/sayHi2](http://localhost:8771/sayHi2)
+[http://localhost:8771/sayHi3](http://localhost:8771/sayHi3)
+[http://localhost:8771/book1](http://localhost:8771/book1)
+
+
 # Reference
 
-    [Spring RestTemplate](https://blog.csdn.net/u012702547/article/details/77917939/)
+   [Spring RestTemplate](https://blog.csdn.net/u012702547/article/details/77917939/)
 
 
