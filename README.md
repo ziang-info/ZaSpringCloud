@@ -23,6 +23,12 @@ verify it is functioning at [http://localhost:8763/hi?name=latti](http://localho
 
 You should see `hi hello,i am from port:8763 and 29`
 
+If you want to run multiple service provider just like following:
+
+    java -jar provider-0.0.1-SNAPSHOT.jar --server.port=8762  
+    java -jar provider-0.0.1-SNAPSHOT.jar --server.port=8763
+
+
 ## za-feign-consumer 
 
 Verify it is functioning at [http://localhost:8765/hi?name=latti](http://localhost:8765/hi?name=latti)
@@ -41,5 +47,18 @@ You may see an error while the eureka/ribbon caches warm up similar to the follo
     com.netflix.client.ClientException: Load balancer does not have available server for client: HelloServer
 
 It should go away shortly.
+
+## za-ribbon-consumer 
+
+Verify it is functioning at [http://localhost:8771/ribbon-consumer](http://localhost:8771/ribbon-consumer)
+
+You should see like:
+    `hi ribbon,i am from port:8762 and 7`
+    or
+    `hi ribbon,i am from port:8763 and 35`
+
+# Reference
+
+    [Spring RestTemplate](https://blog.csdn.net/u012702547/article/details/77917939/)
 
 

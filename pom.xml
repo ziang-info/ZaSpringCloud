@@ -22,6 +22,7 @@
 		<module>ZaEurekaServer</module>
 		<module>ZaEurekaClient</module>
 		<module>ZaFeignConsumer</module>
+		<module>ZaRibbonConsumer</module>
 	</modules>
 
 	<properties>
