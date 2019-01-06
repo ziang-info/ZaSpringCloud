@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>ribbon-consumer</name>
+    <name>za-ribbon-consumer</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>

@@ -11,12 +11,12 @@
 	<name>za-spring-cloud</name>
 	<description>Demo project for Spring Cloud</description>
 
-	<!--parent>
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.4.2.RELEASE</version>
-		<relativePath/> < lookup parent from repository >
-	</parent-->
+		<version>2.0.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
 
 	<modules>
 		<module>ZaCommon</module>
@@ -24,6 +24,7 @@
 		<module>ZaEurekaClient</module>
 		<module>ZaFeignConsumer</module>
 		<module>ZaRibbonConsumer</module>
+		<module>ZaZuulService</module>
 	</modules>
 
 	<properties>

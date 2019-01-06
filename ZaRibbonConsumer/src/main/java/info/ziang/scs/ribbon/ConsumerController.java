@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
@@ -45,8 +46,23 @@ public class ConsumerController {
 
     }
 
+    public String hiError() {
+        return "hi,xx,sorry,error!";
+    }
+
     public String hiError(String name) {
-        return "hi,"+name+",sorry,error!";
+        return "hi," + name + ",sorry,error!";
+    }
+
+    @HystrixCommand(fallbackMethod = "hiError")
+    @RequestMapping("/hi")
+    public String sayHi(@RequestParam(value = "name") String name) {
+        ResponseEntity<String> responseEntity = restTemplate.getForEntity(URL_PREFIX_HI + "{1}", String.class, name);
+        String rFromServiceHi = responseEntity.getBody();
+
+        rFromServiceHi += " (Ribbon+RestTemplate)";
+
+        return rFromServiceHi;
     }
 
     @HystrixCommand(fallbackMethod = "hiError")

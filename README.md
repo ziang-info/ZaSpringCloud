@@ -8,7 +8,7 @@ running on [http://localhost:8761](http://localhost:8761)
 
 `mvn package`
 
-## za-eureka-server
+## za-eureka-server (Register Center) 8761
 
 run `java -jar ZaEurekaServer/target/za-eureka-server-0.0.1-SNAPSHOT.jar`
 
@@ -16,7 +16,7 @@ verify it is functioning at [http://localhost:8761](http://localhost:8761)
 
 You should see `Spring Eureka Console`
 
-## za-eureka-client (service-hi)
+## za-eureka-client (Service Provoder: service-hi) 8762
 
 run `java -jar za-eureka-client/target/za-eureka-client-0.0.1-SNAPSHOT.jar`
 
@@ -30,7 +30,7 @@ If you want to run multiple service provider just like following:
     java -jar provider-0.0.1-SNAPSHOT.jar --server.port=8763
 
 
-## za-feign-consumer 
+## za-feign-consumer (Service Consumer)  8765
 
 Verify it is functioning at [http://localhost:8765/hi?name=latti](http://localhost:8765/hi?name=latti)
 
@@ -49,7 +49,7 @@ You may see an error while the eureka/ribbon caches warm up similar to the follo
 
 It should go away shortly.
 
-## za-ribbon-consumer 
+## za-ribbon-consumer (Service Consumer) 8771
 
 Verify it is functioning at [http://localhost:8771/ribbon-consumer](http://localhost:8771/ribbon-consumer)
 
@@ -62,6 +62,22 @@ You should see like:
 [http://localhost:8771/sayHi2](http://localhost:8771/sayHi2)
 [http://localhost:8771/sayHi3](http://localhost:8771/sayHi3)
 [http://localhost:8771/book1](http://localhost:8771/book1)
+
+
+## za-zuul-service (Router) 8781
+
+打开浏览器访问：http://localhost:8781/api-a/hi?name=latti ;
+
+浏览器显示：
+
+    hi latti,i am from port:8762 and 164(Ribbon+RestTemplate)
+
+打开浏览器访问：http://localhost:8781/api-b/hi?name=latti ;
+
+浏览器显示：
+
+    hi latti,i am from port:8762 and 162 (FEIGN)
+
 
 
 # Reference

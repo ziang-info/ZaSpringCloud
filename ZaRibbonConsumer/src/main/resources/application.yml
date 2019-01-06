@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: ribbon-consumer
+    name: za-ribbon-cusumer
 
 server:
   port: 8771
