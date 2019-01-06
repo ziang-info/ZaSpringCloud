@@ -1,5 +1,6 @@
 package info.ziang.scs.ribbon;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import info.ziang.scs.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -44,6 +45,11 @@ public class ConsumerController {
 
     }
 
+    public String hiError(String name) {
+        return "hi,"+name+",sorry,error!";
+    }
+
+    @HystrixCommand(fallbackMethod = "hiError")
     @RequestMapping("/sayHi")
     public String sayHello() {
         ResponseEntity<String> responseEntity = restTemplate.getForEntity(URL_PREFIX_HI + "{1}", String.class, "张三");
