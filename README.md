@@ -64,7 +64,7 @@ You should see like:
 [http://localhost:8771/book1](http://localhost:8771/book1)
 
 
-## za-zuul-service (Router) 8781
+## za-zuul-service (Router & Filter) 8781
 
 打开浏览器访问：http://localhost:8781/api-a/hi?name=latti ;
 
@@ -78,6 +78,8 @@ You should see like:
 
     hi latti,i am from port:8762 and 162 (FEIGN)
 
+Add Filer then visit: http://localhost:8781/api-b/hi?name=lattimore
+    `token is empty`
 
 
 # Reference
