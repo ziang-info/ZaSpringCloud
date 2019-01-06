@@ -8,11 +8,8 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @SpringBootApplication
@@ -65,5 +62,29 @@ public class ServiceHiApplication {
 	public Book book1() {
 		return new Book("三国演义", 90, "罗贯中", "花城出版社");
 	}
+
+	@RequestMapping(value = "/getbook2", method = RequestMethod.POST)
+	public Book book2(@RequestBody Book book) {
+		System.out.println("getbook2: " + book.getName());
+		book.setPrice(33);
+		book.setAuthor("曹雪芹");
+		book.setPublisher("人民文学出版社");
+		return book;
+	}
+
+	@RequestMapping(value = "/getbook3", method = RequestMethod.PUT)
+	public Book book3(@RequestBody Book book) {
+		System.out.println("getbook3: " + book.getName());
+		book.setPrice(33);
+		return book;
+	}
+
+	@RequestMapping(value = "/getbook4", method = RequestMethod.DELETE)
+	public Book book4(@RequestBody Book book) {
+		System.out.println("getbook4: " + book.getName());
+		book.setPrice(33);
+		return book;
+	}
+
 
 }

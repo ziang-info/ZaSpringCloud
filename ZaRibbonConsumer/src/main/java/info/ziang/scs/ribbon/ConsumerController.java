@@ -72,4 +72,39 @@ public class ConsumerController {
         return responseEntity.getBody();
     }
 
+    @RequestMapping("/book2")
+    public Book book2() {
+        Book book = restTemplate.getForObject(URL_PREFIX_BOOK + "1", Book.class);
+        return book;
+    }
+
+    // NOT VERIFIED YET
+    @RequestMapping("/book3")
+    public Book book3() {
+        Book book = new Book();
+        book.setName("红楼梦");
+        ResponseEntity<Book> responseEntity = restTemplate.postForEntity(URL_PREFIX_BOOK + "2", book, Book.class);
+        return responseEntity.getBody();
+    }
+
+    /*
+     postForObject
+     postForLocation
+    */
+
+    // NOT VERIFIED YET
+    @RequestMapping("/putbook")
+    public void put() {
+        Book book = new Book();
+        book.setName("红楼梦");
+        restTemplate.put(URL_PREFIX_BOOK + "3/{1}", book, 99);
+    }
+
+    // NOT VERIFIED YET
+    @RequestMapping("/deletebook")
+    public void delete() {
+        restTemplate.delete(URL_PREFIX_BOOK + "4/{1}", 100);
+    }
+
+
 }
