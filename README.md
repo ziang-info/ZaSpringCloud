@@ -82,6 +82,21 @@ Add Filer then visit: http://localhost:8781/api-b/hi?name=lattimore
     `token is empty`
 
 
+## za-config-server 8888
+
+http://localhost:8888/foo/dev
+```
+{"name":"foo","profiles":["dev"],"label":null,"version":"00d32612a38898781bce791a4a845e60a7fbdb4e","state":null,"propertySources":[]}
+```
+
+## za-config-client 8881
+
+http://localhost:8881/hi
+
+```
+foo version 2
+```
+
 # Reference
 
    [Spring RestTemplate](https://blog.csdn.net/u012702547/article/details/77917939/)
