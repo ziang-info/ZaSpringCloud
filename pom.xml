@@ -27,6 +27,8 @@
 		<module>ZaZuulService</module>
 		<module>ZaConfigServer</module>
 		<module>ZaConfigClient</module>
+		<module>ZaSpringMvc</module>
+		<module>ZaSpringMvc2</module>
 	</modules>
 
 	<properties>
