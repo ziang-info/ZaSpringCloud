@@ -93,16 +93,18 @@ http://localhost:8888/foo/dev
 
 http://localhost:8881/hi
 
-
-
-## za-spring-mvc (1&2) 主要用来演示SpringMVC 来注册微服务 Eureka
-
-http://localhost:8881/hello
-
-
 ```
 foo version 2
 ```
+
+## za-spring-mvc (1&2) 主要用来演示SpringMVC 来注册微服务 Eureka
+
+Refer to:
+    https://github.com/devbhuwan/eureka-client-with-springmvc
+    https://stackoverflow.com/questions/35409492/eureka-service-discovery-without-spring-boot
+
+http://localhost:8881/hello
+
 
 # Reference
 
