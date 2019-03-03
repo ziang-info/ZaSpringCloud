@@ -105,6 +105,8 @@ Refer to:
 
 http://localhost:8881/hello
 
+## za-sidecar 8070
+    Refer to README.md under project folder.
 
 # Reference
 

@@ -3,6 +3,7 @@ package info.ziang.scs.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/")
@@ -46,5 +47,14 @@ public class SidecarController {
     @RequestMapping(value = "/genHiStr", method = RequestMethod.GET)
     public String genHiStr(String name) {
         return "Hi, " + name + " (from Sidecar)";
+    }
+
+    /**
+     * 3rd part app access spring cloud service
+     * @return
+     */
+    @RequestMapping("/hi")
+    public String hi3() {
+        return new RestTemplate().getForEntity("http://localhost:8070/service-hi/getbook1", String.class).getBody();
     }
 }

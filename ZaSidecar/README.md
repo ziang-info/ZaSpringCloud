@@ -13,6 +13,8 @@ ZaSpringMvc (Service Provider or 3rd part App)
         
         ---/genHiStr 提供的服务接口（测试用）  参数name（String）
         
+        ---/hi  通过Sidecar调用了SpringCloud中service-hi中的getbook1接口
+        
 ZaSidecar (Sidecar)
     http://localhost:8070/
     
@@ -26,11 +28,16 @@ ZaFeignConsumer （测试接口服务）
 ZaZuul （测试接口服务）
     http://localhost:8781/api-sc/mvc/genHiStr?name=3
   
+  
+第三方应用调用SpringCloud服务也是通过Sidecar
+        http://localhost:8070/<service-id>/<method-name>
+        如： http://localhost:8070/service-hi/getbook1
+        
+        
         
 注意：
     1. Sidecar服务注册成功后，到服务正常工作需要"些许"时间，需要耐性等待。
     2. 坑，因为mvc服务路径有一个前缀mvc，所以绑定服务不要漏掉了。
-    3. 第三方应用调用SpringCloud服务也是通过Sidecar
-        http://localhost:8070/<service-id>/<method-name>
+    3. 接口中的中文乱码问题
         
         
