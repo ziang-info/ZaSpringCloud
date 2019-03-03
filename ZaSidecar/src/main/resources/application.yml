@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: za-sidecar
+
+server:
+  port: 8070
+
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://user:password123@localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+sidecar:
+  port: 8080
+  health-uri: http://localhost:8080/mvc/health

@@ -29,7 +29,8 @@
 		<module>ZaConfigClient</module>
 		<module>ZaSpringMvc</module>
 		<module>ZaSpringMvc2</module>
-	</modules>
+        <module>ZaSidecar</module>
+    </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

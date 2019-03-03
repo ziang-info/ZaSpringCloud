@@ -1,4 +1,4 @@
-package info.ziang.scs.hellolworld;
+package info.ziang.scs.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
