@@ -11,7 +11,7 @@
     <name>Spring MVC HelloWorld: xml</name>
 
     <properties>
-        <spring.version>4.0.1.RELEASE</spring.version>
+        <spring.version>4.3.22.RELEASE</spring.version>
     </properties>
 
     <dependencies>

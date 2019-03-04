@@ -30,6 +30,7 @@
 		<module>ZaSpringMvc</module>
 		<module>ZaSpringMvc2</module>
         <module>ZaSidecar</module>
+		<module>ZaGateway</module>
     </modules>
 
 	<properties>
